@@ -1,4 +1,6 @@
+
 #include "Naglowki.h"
+#include "Lista.h"
 
 
 using namespace std;
@@ -218,6 +220,7 @@ int main ()
 	Struktury *wsk;
 	Stos st;
 	Kolejka kol;
+	Lista lst;
 
 	do
 	{
@@ -341,15 +344,99 @@ int main ()
 		break;
 
 	case 3:
-		cout << "------------------------------" << endl;
-		cout << " jeszcze nie oprogramowano :( " << endl;
-		cout << "------------------------------" << endl;
+		///////////////////////////////////
+		do
+		{
+			lst.wyswietl_lista();
+
+			cout << "MENU LISTA " << endl;
+			cout << "------------------------------" << endl;
+			cout << "1.  push_front " << endl;
+			cout << "2.  push_back " << endl;
+			cout << "3.  pop_front " << endl;
+			cout << "4.  pop_back " << endl;
+			cout << "5.  size " << endl;
+			cout << "6.  max_size " << endl;
+			cout << "7.  empty " << endl;
+			cout << "8.  remove " << endl;
+			cout << "9.  sort " << endl;
+			cout << "10. reverse " << endl;
+			cout << "11. exit " << endl;
+			cout << "------------------------------" << endl;
+			cout << "wybierz: " << endl;
+			cin >> wybor;
+
+			
+
+			switch (wybor)
+			{
+			case 1:
+				lst.push_front();
+				break;
+			
+			case 2:
+				lst.push_back();
+				break;
+
+			case 3:	
+				lst.pop_front();
+				break;
+
+			case 4:
+				lst.pop_back();
+				break;
+
+			case 5:
+				lst.size();
+				break;
+
+			case 6:
+				lst.max_size();
+				break;
+	
+			case 7:
+				lst.empty();
+				break;
+
+			case 8:
+				lst.remove();
+				break;
+
+			case 9:
+				lst.sort();
+				break;
+
+			case 10:
+				lst.reverse();
+				break;
+
+			case 11:
+				exit = true;
+				system("CLS");
+				break;
+
+			default:
+				cout << "wybrano inna opcje niz powyzej " << endl;
+				break;
+			}
+		}
+		while (!exit);
+
+
+
+		Sleep(3000);
+		system("CLS");
+
+		///////////////////////////////////
+
 		break;
 
 	case 4:
 		cout << "------------------------------" << endl;
 		cout << " jeszcze nie oprogramowano :( " << endl;
 		cout << "------------------------------" << endl;
+		Sleep(3000);
+		system("CLS");
 		break;
 	}
 	}
@@ -364,4 +451,4 @@ int main ()
 
 	cin.get();
 	return 0;
-}
+	}
