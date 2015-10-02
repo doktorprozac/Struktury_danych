@@ -1,6 +1,7 @@
 
 #include "Naglowki.h"
 #include "Lista.h"
+#include "Drzewo_bin.h"
 
 
 using namespace std;
@@ -221,6 +222,7 @@ int main ()
 	Stos st;
 	Kolejka kol;
 	Lista lst;
+	Drzewo_bin drzewo;
 
 	do
 	{
@@ -417,6 +419,7 @@ int main ()
 
 			default:
 				cout << "wybrano inna opcje niz powyzej " << endl;
+				Sleep(3000);
 				break;
 			}
 		}
@@ -432,11 +435,48 @@ int main ()
 		break;
 
 	case 4:
-		cout << "------------------------------" << endl;
-		cout << " jeszcze nie oprogramowano :( " << endl;
-		cout << "------------------------------" << endl;
-		Sleep(3000);
-		system("CLS");
+		for (int i = 1; i<=15; i++)
+		{
+			drzewo.pusty[i] = true;
+		}
+
+		do
+		{
+			drzewo.wyswietl();		
+			cout << "MENU DRZEWO " << endl;
+			cout << "------------------------------" << endl;
+			cout << "1.  ADD - dodaj element do drzewa " << endl;
+			cout << "2.  FIND - znajdz element w drzewie " << endl;
+			cout << "3.  EXIT - wyjscie z programu " << endl;
+			cout << "------------------------------" << endl;
+			cout << "wybierz: " << endl;
+			cin >> wybor;
+
+			switch (wybor)
+			{
+			case 1:
+				drzewo.add();
+				Sleep(3000);
+				break;
+
+			case 2:
+				drzewo.find();
+				Sleep(3000);
+				break;
+
+			case 3:
+				exit = true;
+				system("CLS");
+				break;
+
+			default :
+				cout << "Wybrano inna opcje niz [1 2 3] " << endl;
+					break;
+			}
+
+		}
+		while (!exit);
+
 		break;
 	}
 	}
