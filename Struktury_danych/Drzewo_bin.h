@@ -1,11 +1,19 @@
 #include "Naglowki.h"
 
-class Drzewo_bin 
+class Drzewo_bin
 {
-public:
+protected:
+	/* zmienne  */
+	
 	int *korzen;
+	int dane [16]; // tablica z danymi
+	
 
+public:
+	friend class Struktury;
+	bool pusty [16]; // tablica przechowujaca puste miejsca do wypelnienia 
 	/* void ustawiajacay kursor w miejscu X,Y na ekranie */
+
 	void gotoxy (int x, int y)
 	{
 		COORD c;
@@ -13,11 +21,6 @@ public:
 		c.Y = y - 1;
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 	}
-
-	/* zmienne  */
-
-	int dane [16]; // tablica z danymi
-	bool pusty [16]; // tablica przechowujaca puste miejsca do wypelnienia 
 
 	/* wyswietlenie drzewa */
 

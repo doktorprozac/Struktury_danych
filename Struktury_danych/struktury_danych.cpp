@@ -6,31 +6,33 @@
 
 using namespace std;
 
-int rozmiar_kol = 0;
-int rozmiar = 0;
-int glowa; // pierwszy element w kolejce [index]
-int ogon; // pierwsze wolne miejsce w kolejce [index]
+
 
 
 
 //////////////////////////////
- 
-
+ int rozmiar_kol;
+int rozmiar;
+int glowa; // pierwszy element w kolejce [index]
+int ogon; // pierwsze wolne miejsce w kolejce [index]
 
 class Struktury
 {
+
 public:
 	virtual void push (int *tablica) = 0;
 	virtual void pop (int *tablica) = 0;
 	virtual void size () = 0;
 	virtual void empty () = 0;
 	virtual void wyswietl (int *tablica) = 0;
+	
 };
 
 class Stos :  public Struktury
 {
 	
 public:
+friend class Struktury;
 virtual void push(int *tablica)
 {
 	if (rozmiar >= 10)
@@ -109,7 +111,7 @@ virtual void wyswietl (int *tablica)
 class Kolejka: public Struktury
 {
 public:
-	
+friend class Struktury;
 virtual void push(int *tablica)
 {
 	if (rozmiar_kol >= 10)
@@ -223,6 +225,8 @@ int main ()
 	Kolejka kol;
 	Lista lst;
 	Drzewo_bin drzewo;
+
+	
 
 	do
 	{
@@ -437,6 +441,7 @@ int main ()
 	case 4:
 		for (int i = 1; i<=15; i++)
 		{
+		
 			drzewo.pusty[i] = true;
 		}
 

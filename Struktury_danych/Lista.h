@@ -7,9 +7,11 @@ list <int> lista;
 
 class Lista
 {
-public:
+
 	int liczba;
 
+public:
+	friend class Struktury;
 void wyswietl_lista()
 {
 	system ("CLS");
@@ -156,8 +158,8 @@ void reverse ()
 
 /////////////////////////////////////
 
-
 };
+
 
 
 
